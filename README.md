@@ -27,11 +27,8 @@ pip install -r requirements.txt
 
 ### 2. 모델 및 데이터 준비
 
-**모델 파일**: `models/resnet18_best.pth` (별도 다운로드 필요)
-- [다운로드 링크](#) (제공 필요)
-
 **데이터셋**: `data/casting_data/` (별도 다운로드 필요)
-- [Kaggle Dataset](#) (제공 필요)
+- [[Kaggle Dataset](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)](#) 
 
 ### 3. 실행
 
