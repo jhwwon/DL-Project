@@ -1,5 +1,12 @@
 streamlit
 torch
-yolov5
+torchvision
 opencv-python
 matplotlib
+seaborn
+numpy
+pandas
+Pillow
+grad-cam
+tqdm
+scikit-learn

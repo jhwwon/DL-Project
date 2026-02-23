@@ -8,7 +8,7 @@
 
 ## 주요 기능
 
-- **자동 결함 탐지**: 이미지 업로드만으로 정상/불량 판정 (정확도 97.5%)
+- **자동 결함 탐지**: 이미지 업로드만으로 정상/불량 판정 (정확도 99%)
 - **Grad-CAM 시각화**: AI가 주목한 결함 영역을 히트맵으로 표시
 - **웹 인터페이스**: Streamlit 기반 사용자 친화적 UI
 - **실시간 통계**: 검사 현황 및 불량률 모니터링
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ### 2. 모델 및 데이터 준비
 
 **데이터셋**: `data/casting_data/` (별도 다운로드 필요)
-- [[Kaggle Dataset](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)](#) 
+- [Kaggle Dataset](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)
 
 ### 3. 실행
 
@@ -41,24 +41,27 @@ streamlit run src/streamlit_app.py
 ## 프로젝트 구조
 
 ```
-DL-Project/
+Casting_Defect_DLProject/
 ├── src/
-│   └── streamlit_app.py          # 메인 웹 애플리케이션
+│   ├── streamlit_app.py          # 메인 웹 애플리케이션
+│   └── assets/                   # 시각화 결과물 (confusion matrix 등)
 ├── notebooks/
 │   └── resnet_binary_classification_gradcam.ipynb  # 모델 학습
 ├── models/
-│   └── resnet18_best.pth         # 학습된 모델
+│   ├── resnet18_best.pth         # 학습된 모델 (Early Stopping 기준)
+│   └── resnet18_binary.pth       # 학습된 모델 (최종)
 ├── data/
-│   └── casting_data/             # 데이터셋
+│   ├── casting_data/             # 전체 데이터셋
+│   └── casting_data_sample/      # 샘플 데이터셋
 └── requirements.txt
 ```
 
 ## 모델 성능
 
 - **아키텍처**: ResNet18 (Transfer Learning)
-- **정확도**: 97.5%
+- **정확도**: 99%
 - **추론 속도**: ~0.05초/이미지
-- **데이터셋**: 800장 (정상 400, 불량 400)
+- **데이터셋**: 1,238장 (train 776장 / test 462장)
 
 ## 기술 스택
 
@@ -69,7 +72,7 @@ DL-Project/
 
 ## 라이센스
 
-MIT License - 자세한 내용은 [LICENSE](LICENSE) 참조
+MIT License
 
 ## 연락처
 
